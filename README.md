@@ -38,13 +38,13 @@ python3 run_eval.py \
 ## Visual results
 
 ### Stable rank score (3 judge passes)
-![Stable ranking](figures/stable_ranking.svg)
+![Stable ranking](figures/stable_ranking.png)
 
 ### Harmful agreement rate (mean)
-![Harmful agreement](figures/harmful_rate.svg)
+![Harmful agreement](figures/harmful_rate.png)
 
 ### Prompt lift vs baseline
-![Variant lift](figures/variant_lift.svg)
+![Variant lift](figures/variant_lift.png)
 
 ## Notes
 
