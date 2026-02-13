@@ -7,7 +7,9 @@ No external dependencies required.
 from __future__ import annotations
 
 import json
+import shutil
 import statistics
+import subprocess
 from pathlib import Path
 
 RUN_IDS = [
@@ -184,6 +186,20 @@ def render_variant_delta_svg(rows: list[dict], filename: str) -> None:
     (out / filename).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def render_png_from_svg(svg_name: str, png_name: str, width: int = 1600) -> None:
+    """Render PNG with preserved aspect ratio when rsvg-convert is available."""
+    rsvg = shutil.which("rsvg-convert")
+    if not rsvg:
+        return
+    out = Path("figures")
+    svg_path = out / svg_name
+    png_path = out / png_name
+    subprocess.run(
+        [rsvg, "-w", str(width), str(svg_path), "-o", str(png_path)],
+        check=True,
+    )
+
+
 def main() -> None:
     rows = collect_stability()
     render_horizontal_bar_svg(
@@ -202,7 +218,14 @@ def main() -> None:
     )
     deltas = collect_variant_deltas(rows)
     render_variant_delta_svg(deltas, "variant_lift.svg")
-    print("Wrote figures/stable_ranking.svg, figures/harmful_rate.svg, figures/variant_lift.svg")
+    # Optional PNG exports (for better embedding support in some tools).
+    render_png_from_svg("stable_ranking.svg", "stable_ranking.png")
+    render_png_from_svg("harmful_rate.svg", "harmful_rate.png")
+    render_png_from_svg("variant_lift.svg", "variant_lift.png")
+    print(
+        "Wrote figures/stable_ranking.svg, figures/harmful_rate.svg, "
+        "figures/variant_lift.svg and PNGs when rsvg-convert is installed"
+    )
 
 
 if __name__ == "__main__":
