@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="314" viewBox="0 0 1400 314">
+<style>
+.title { font: 700 24px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; fill: #111827; }
+.label { font: 13px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; fill: #111827; }
+.value { font: 12px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; fill: #1f2937; }
+.grid { stroke: #e5e7eb; stroke-width: 1; }
+.zero { stroke: #6b7280; stroke-width: 2; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text class="title" x="24" y="40">Variant Lift vs Baseline (Mean Overall Δ)</text>
+<line class="zero" x1="560.0" y1="70" x2="560.0" y2="284" />
+<text class="label" x="550" y="94" text-anchor="end">claude-opus-4-6 | counterweight-v2-failure-aware</text>
+<rect x="560.0" y="80" width="720.0" height="20" fill="#059669" rx="4" ry="4" />
+<text class="value" x="1288.0" y="94">+6.72</text>
+<text class="label" x="550" y="128" text-anchor="end">gpt-5.2 | counterweight-v1</text>
+<rect x="560.0" y="114" width="477.3" height="20" fill="#059669" rx="4" ry="4" />
+<text class="value" x="1045.3" y="128">+4.46</text>
+<text class="label" x="550" y="162" text-anchor="end">claude-opus-4-6 | counterweight-v1</text>
+<rect x="560.0" y="148" width="434.4" height="20" fill="#059669" rx="4" ry="4" />
+<text class="value" x="1002.4" y="162">+4.06</text>
+<text class="label" x="550" y="196" text-anchor="end">gpt-5.2 | counterweight-v2-failure-aware</text>
+<rect x="560.0" y="182" width="382.0" height="20" fill="#059669" rx="4" ry="4" />
+<text class="value" x="950.0" y="196">+3.57</text>
+<text class="label" x="550" y="230" text-anchor="end">gpt-5.2-pro | counterweight-v2-failure-aware</text>
+<rect x="560.0" y="216" width="293.8" height="20" fill="#059669" rx="4" ry="4" />
+<text class="value" x="861.8" y="230">+2.74</text>
+<text class="label" x="550" y="264" text-anchor="end">gpt-5.2-pro | counterweight-v1</text>
+<rect x="560.0" y="250" width="260.2" height="20" fill="#059669" rx="4" ry="4" />
+<text class="value" x="828.2" y="264">+2.43</text>
+</svg>
