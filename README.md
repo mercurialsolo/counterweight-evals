@@ -50,3 +50,5 @@ python3 run_eval.py \
 
 - If `gpt-5.3` is unavailable, use the latest available GPT-5.x model ID in your account.
 - Anthropic credentials can be sourced from `ANTHROPIC_KEY` or `ANTHROPIC_API_KEY`.
+- Charts are generated as SVG first, then PNG with preserved aspect ratio (no forced width+height stretching).
+- Experiment outputs are stored as plain text artifacts in `runs/` (`jsonl`/`json`/`md`); this repo does not ship a zipped experiment bundle.
